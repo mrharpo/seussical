@@ -1,0 +1,18 @@
+[project]
+name = "seussical"
+version = "0.0.1"
+description = "Add your description here"
+readme = "README.md"
+authors = [{ name = "Harpo", email = "harpo@harpo.me" }]
+requires-python = ">=3.10"
+dependencies = ["qlab"]
+
+[build-system]
+requires = ["uv_build>=0.9.5,<0.10.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = ["ipykernel>=7.0.1", "rich>=14.2.0", "uploadserver>=6.0.0"]
+
+[tool.uv.sources]
+qlab = { git = "https://github.com/quaternionmedia/qlab-python.git", branch = "theatremix" }
