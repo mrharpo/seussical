@@ -1,5 +1,5 @@
 version = 1
-revision = 2
+revision = 3
 requires-python = ">=3.10"
 resolution-markers = [
     "python_full_version >= '3.11'",
@@ -747,13 +747,24 @@ wheels = [
 [[package]]
 name = "qlab"
 version = "0.1.0"
-source = { git = "https://github.com/quaternionmedia/qlab-python.git?branch=theatremix#7c69cdb9b0ebbd87489852621e1f31bdb7449196" }
+source = { editable = "../QLab-python" }
 dependencies = [
     { name = "fountain" },
     { name = "pydantic" },
     { name = "python-osc" },
     { name = "sqlmodel" },
 ]
+
+[package.metadata]
+requires-dist = [
+    { name = "fountain", git = "https://github.com/quaternionmedia/fountain?branch=deduplicate" },
+    { name = "pydantic", specifier = ">=2.8.2" },
+    { name = "python-osc", specifier = ">=1.8.3" },
+    { name = "sqlmodel", specifier = ">=0.0.27" },
+]
+
+[package.metadata.requires-dev]
+dev = [{ name = "rich", specifier = ">=14.2.0" }]
 
 [[package]]
 name = "rich"
@@ -784,7 +795,7 @@ dev = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "qlab", git = "https://github.com/quaternionmedia/qlab-python.git?branch=theatremix" }]
+requires-dist = [{ name = "qlab", editable = "../QLab-python" }]
 
 [package.metadata.requires-dev]
 dev = [
