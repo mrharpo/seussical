@@ -747,24 +747,13 @@ wheels = [
 [[package]]
 name = "qlab"
 version = "0.1.0"
-source = { editable = "../QLab-python" }
+source = { git = "https://github.com/quaternionmedia/qlab-python?branch=theatremix#25fb72cd31c048516d1f08f741ebe427a8b71266" }
 dependencies = [
     { name = "fountain" },
     { name = "pydantic" },
     { name = "python-osc" },
     { name = "sqlmodel" },
 ]
-
-[package.metadata]
-requires-dist = [
-    { name = "fountain", git = "https://github.com/quaternionmedia/fountain?branch=deduplicate" },
-    { name = "pydantic", specifier = ">=2.8.2" },
-    { name = "python-osc", specifier = ">=1.8.3" },
-    { name = "sqlmodel", specifier = ">=0.0.27" },
-]
-
-[package.metadata.requires-dev]
-dev = [{ name = "rich", specifier = ">=14.2.0" }]
 
 [[package]]
 name = "rich"
@@ -781,7 +770,7 @@ wheels = [
 
 [[package]]
 name = "seussical"
-version = "0.0.1"
+version = "0.2.0"
 source = { editable = "." }
 dependencies = [
     { name = "qlab" },
@@ -795,7 +784,7 @@ dev = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "qlab", editable = "../QLab-python" }]
+requires-dist = [{ name = "qlab", git = "https://github.com/quaternionmedia/qlab-python?branch=theatremix" }]
 
 [package.metadata.requires-dev]
 dev = [
