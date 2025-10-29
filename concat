@@ -1,0 +1,25 @@
+#!/bin/bash
+# This script concatenates all MP4 files passed to it into a single MP4 file.
+
+help() {
+  echo "$0
+  
+  Concatenate multiple video files into a single file with ffmpeg.
+
+  Usage: 
+  $0 output.mp4 input1.mp4 input2.mp4 videos/*.mp4 ..."
+}
+
+if [ "$1" == "--help" ] || [ "$1" == "-h" ]; then
+  help
+  exit 0
+fi
+if [ "$#" -lt 2 ] || [ ! -f "$2" ]; then
+  echo "Error: At least one input file and one output file are required."
+  help
+  exit 1
+fi
+
+output_file="$1"
+shift
+ffmpeg -f concat -safe 0 -i <(for f in "$@"; do echo "file '$PWD/$f'"; done) -c copy "$output_file"
