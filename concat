@@ -22,4 +22,4 @@ fi
 
 output_file="$1"
 shift
-ffmpeg -f concat -safe 0 -i <(for f in "$@"; do echo "file '$PWD/$f'"; done) -c copy "$output_file"
+ffmpeg -f concat -safe 0 -i <(for f in "$@"; do echo "file '$f'"; done) -c copy "$output_file"
