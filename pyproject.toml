@@ -15,4 +15,4 @@ build-backend = "uv_build"
 dev = ["ipykernel>=7.0.1", "rich>=14.2.0", "uploadserver>=6.0.0"]
 
 [tool.uv.sources]
-qlab = { git = "https://github.com/quaternionmedia/qlab-python", branch = "theatremix" }
+qlab = { path = "../QLab-python", editable = true }
