@@ -1,0 +1,11 @@
+{
+  "types": {
+    "aliases": "aliases",
+    "cssclasses": "multitext",
+    "tags": "tags",
+    "start": "datetime",
+    "curtain speech": "datetime",
+    "date": "date",
+    "downbeat": "datetime"
+  }
+}
